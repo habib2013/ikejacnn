@@ -146,6 +146,10 @@ def refresh_data_endpoint():
     return jsonify({"message": "Data refresh initiated. Check /api/data or /api/outage-summary for updated results."})
 
 
+
 if __name__ == '__main__':
-    port = int(os.environ.get("PORT", 5001)) # Use 5001 to avoid conflict with default 5000
-    app.run(debug=True, host='0.0.0.0', port=port)
+    # For local development, you can uncomment the line below and run `python3 app.py`
+    # Make sure to set debug=False for any production-like testing locally.
+    # port = int(os.environ.get("PORT", 5001))
+    # app.run(debug=True, host='0.0.0.0', port=port)
+    pass # Gunicorn will serve the app in production
